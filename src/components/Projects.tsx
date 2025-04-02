@@ -1,7 +1,7 @@
 import projectData from "./data.json";
 import IoTIcon from "/public/images/iot.svg";
 import KubernetesIcon from "/public/images/kubernetes.svg";
-import MLIcon from "/public/images/ml.svg";
+import MLIcon from "/public/images/ML.svg";
 import Image from "next/image";
 
 const Projects = () => {

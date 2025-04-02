@@ -1,0 +1,49 @@
+[
+	{
+	  "id": 1,
+	  "title": "V2X Research",
+	  "description": "Developed a solution to reduce the Total Cost of Ownership (TCO) of Vehicle-to-Everything Roadside Equipment (V2X-RSE) using COTS components and open-source software. Innovated a proxy server connecting RSE & OBE networks with a web platform for developers to code, test, and deploy new functionality. Deployed COTS V2X-RSEs at multiple locations with Kubernetes deployment supporting IoT edge computing, including a custom Docker Registry (OwlBoxHub) with custom ARM containers.",
+	  "demoLink": "https://youtu.be/OrBc7ursPf8",
+	  "githubLink": "",
+	  "technologies": [
+		"Python",
+		"Node",
+		"Linux",
+		"iot",
+		"Docker",
+		"Kubernetes",
+		"raspberry-pi",
+		"HTML"
+	  ]
+	},
+	{
+	  "id": 2,
+	  "title": "2021 AT&T Symposium Hackathon",
+	  "description": "Used Commercial-Off-The-Shelf (COTS) components and open-source software to create smart IoT connected home lighting control and Light-Based Cues with AI to learn as you work in a WFH environment. The system adapts to the presence of the user and flashes lights to alert times for breaks from working as well as for various environmental changes, such as emergencies, holidays, and intruders.",
+	  "demoLink": "https://youtu.be/wm2vlkewGB8",
+	  "githubLink": "",
+	  "technologies": [
+		"Python",
+		"Linux",
+		"iot",
+		"raspberry-pi",
+		"HTML",
+		"PIR Sensors"
+	  ]
+	},
+	{
+	  "id": 3,
+	  "title": "Undergraduate Senior Project",
+	  "description": "Developed and managed a group of four engineers as Project Manager in creating start-up tech company TriFit. The project used COTS components, open-source software, proprietary printed PCB boards, and software to optimize bodybuilders’ dietary recovery post-workout and meal plans using macronutrients. The main device features a gyroscope, accelerometer, heart rate, blood oxygen, and force sensors interfacing with a Raspberry Pi Zero W. It uses ML with a TensorFlow backend to transmit information over BLE to a mobile app and display nutritional regeneration information from a custom REST API.",
+	  "githubLink": "",
+	  "technologies": [
+		"Python",
+		"Linux",
+		"iot",
+		"ML",
+		"Bluetooth-b",
+		"PCB Design & Print"
+	  ]
+	}
+  ]
+  

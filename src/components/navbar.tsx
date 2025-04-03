@@ -22,7 +22,9 @@ const Navbar = () => {
                 </Link>
             </div>
             <a
-                href="/public/services/YairFloresResume.pdf"
+                href="/images/services/YairFloresResume.pdf"
+                alt="Yair Flores Resume"
+                target="_blank"
                 className="resume-btn"
             >
                 Resume

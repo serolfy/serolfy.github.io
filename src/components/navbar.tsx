@@ -22,7 +22,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <a
-                href="https://raw.githubusercontent.com/serolfy/serolfy.github.io/main/images/services/YairFloresResume.pdf"
+                href="/public/services/YairFloresResume.pdf"
                 className="resume-btn"
             >
                 Resume

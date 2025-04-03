@@ -23,7 +23,6 @@ const Navbar = () => {
             </div>
             <a
                 href="/images/services/YairFloresResume.pdf"
-                alt="Yair Flores Resume"
                 target="_blank"
                 className="resume-btn"
             >

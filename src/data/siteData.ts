@@ -121,6 +121,6 @@ export const projects: Project[] = [
 
 export const contactContent = {
   heading: "Get In Touch",
-  text: "If you want us to work together or have any questions, always feel free to reach out, even if to just say hi! 😄",
+  text: "I'm open to discussing software engineering opportunities, cloud architecture, or collaboration on impactful projects. 😄",
   ctaLabel: "Say Hello"
 };

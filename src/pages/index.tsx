@@ -4,53 +4,55 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
-
 import Head from "next/head";
+import { siteConfig } from "@/data/siteData";
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const canScrollToAbout = useRef(true);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
-          if (entry.boundingClientRect.top < 0) {
-            // Scrolling down: Scroll to About
+        if (entry.isIntersecting) {
+          canScrollToAbout.current = true;
+        }
+      },
+      { threshold: 0.8 }
+    );
+
+    const aboutObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && canScrollToAbout.current) {
+          if (entry.boundingClientRect.top > 0) {
             aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-          } else {
-            // Scrolling up: Scroll to Hero
-            heroRef.current?.scrollIntoView({ behavior: "smooth" });
+            canScrollToAbout.current = false;
           }
         }
       },
-      { threshold: 0.98 } // Trigger when 98% of the element is visible
+      { threshold: 0.15 }
     );
 
     const heroElement = heroRef.current;
     const aboutElement = aboutRef.current;
 
-    if (heroElement) {
-      observer.observe(heroElement);
-    }
-
-    if (aboutElement) {
-      observer.observe(aboutElement);
-    }
+    if (heroElement) heroObserver.observe(heroElement);
+    if (aboutElement) aboutObserver.observe(aboutElement);
 
     return () => {
-      if (heroElement) observer.unobserve(heroElement);
-      if (aboutElement) observer.unobserve(aboutElement);
+      if (heroElement) heroObserver.unobserve(heroElement);
+      if (aboutElement) aboutObserver.unobserve(aboutElement);
     };
   }, []);
 
   return (
     <>
       <Head>
-        <title>Yair&apos;s Portfolio</title>
-        <meta name="description" content="Yair Flores" />
+        <title>{siteConfig.title}</title>
+        <meta name="description" content={siteConfig.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.jpeg" />
+        <link rel="icon" href={siteConfig.favicon} />
       </Head>
       <div>
         <div ref={heroRef}>

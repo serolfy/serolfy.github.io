@@ -1,38 +1,44 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import Sun from "/public/images/sun_64.svg";
+import { siteConfig } from "@/data/siteData";
 
 const Navbar = () => {
-    const [isLightMode, setIsLightMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(true);
 
-    useEffect(() => {
-        // Apply the theme on initial load based on the current state
-        document.body.classList.toggle("light-mode", isLightMode);
-    }, [isLightMode]);
+  useEffect(() => {
+    document.body.classList.toggle("light-mode", isLightMode);
+  }, [isLightMode]);
 
-    const toggleTheme = () => {
-        setIsLightMode(!isLightMode);
-    };
-
-    return (
-        <div className="nav-container">
-            <div className="logo">
-                <Link href="/">
-                    Yair Flores
-                </Link>
-            </div>
-            <a
-                href="/images/services/YairFloresResume.pdf"
-                target="_blank"
-                className="resume-btn"
-            >
-                Resume
-            </a>
-            <button onClick={toggleTheme} className="theme-toggle-btn">
-                {isLightMode ? <Sun className="icon sun-icon" /> : <i className="fa-solid fa-moon icon moon-icon"></i>}
-            </button>
+  return (
+    <nav className="nav">
+      <div className="container nav-inner">
+        <Link href="/" className="nav-logo">
+          {siteConfig.name}
+        </Link>
+        <div className="nav-actions">
+          <a href={`mailto:${siteConfig.email}`} className="btn btn-primary">
+            Email
+          </a>
+          <a
+            href={siteConfig.resumePath}
+            target="_blank"
+            className="btn btn-primary"
+          >
+            Resume
+          </a>
+          <button
+            onClick={() => setIsLightMode(!isLightMode)}
+            className="btn-icon"
+            aria-label="Toggle theme"
+          >
+            <i
+              className={isLightMode ? "fa-solid fa-sun" : "fa-solid fa-moon"}
+            />
+          </button>
         </div>
-    );
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

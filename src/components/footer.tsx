@@ -1,29 +1,20 @@
+import { siteConfig } from "@/data/siteData";
+
 const Footer = () => {
   return (
-    <>
-      <hr />
-      <div className="footer-container">
-        <p>&copy; {new Date().getFullYear()} Yair Flores</p>
-        <div className="social_icons">
-          <a
-            href="https://github.com/serolfy"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yairflores/"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
+    <footer className="container">
+      <hr className="footer-divider" />
+      <div className="footer">
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name}</p>
+        <div className="social-links">
+          {siteConfig.socials.map((s) => (
+            <a key={s.label} href={s.url} aria-label={s.label} target="_blank" rel="noopener noreferrer">
+              <i className={s.icon} />
+            </a>
+          ))}
         </div>
       </div>
-    </>
+    </footer>
   );
 };
 

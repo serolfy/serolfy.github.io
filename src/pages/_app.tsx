@@ -9,9 +9,8 @@ import { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    // Only run on the client side
     if (typeof window !== "undefined" && process.env.NEXT_CLARITY_ID) {
-      Clarity.init(process.env.NEXT_CLARITY_ID);
+      Clarity.init(viugpt40po);
     }
   }, []);
   return (

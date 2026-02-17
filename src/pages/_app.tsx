@@ -10,7 +10,7 @@ import { AppProps } from "next/app";
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (typeof window !== "undefined" && process.env.NEXT_CLARITY_ID) {
-      Clarity.init(viugpt40po);
+      Clarity.init('viugpt40po');
     }
   }, []);
   return (
